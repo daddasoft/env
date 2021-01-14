@@ -1,5 +1,10 @@
 ## Make Environment variables for your app/program
 
+## install
+
+```shell
+pip install appdotenv
+```
 ### setup
 
 ```python
