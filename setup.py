@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup_args = dict(
     name='appdotenv',
-    version='1.0.0',
+    version='1.0.1',
     description='Useful tools to work with env files in Python',
     long_description_content_type="text/markdown",
     long_description=README + '\n\n',
