@@ -11,10 +11,18 @@ def config(path=f"{os.getcwd()}/.env"):
     the config function
     """
     def env(key):
+        """
+        give the key of the environment variable and 
+        it's return the value 
+        if not found it return None
+        """
         try:
             f = open(path, "r")
             allLines = f.read().split("\n")
             for item in allLines:
+                # skip comment
+                if item.startswith("#") or item.startswith("//"):
+                    continue
                 selected = item.split("=")
                 if(selected[0].strip() == key):
                     if(len(selected) > 1):
@@ -37,6 +45,9 @@ def env(key):
         f = open(f"{os.getcwd()}/.env", "r")
         allLines = f.read().split("\n")
         for item in allLines:
+            # skip comment
+            if item.startswith("#") or item.startswith("//"):
+                continue
             selected = item.split("=")
             if(selected[0].strip() == key):
                 if(len(selected) > 1):
